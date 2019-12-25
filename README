@@ -1,0 +1,43 @@
+Nume: Vlad Theia-Madalin
+Grupa: 314CC
+
+Aceasta aplicatie este o implementare a jocului 2048, folosind biblioteca ncurses.
+
+Meniul pune la dispozitie utilizatorului 5 optiuni:
+-NEW GAME => Incepe un nou joc(initializeaza tabla de joc si restarteaza scorul).
+-RESUME => In cazul in care utilizatorul iese din joc folosind tasta 'q', acesta 
+ poate continua de unde a ramas(pastreaza starea tablei si scorul). 
+-HIGHSCORE => In aceasta fereastra utilizatorul poate vedea un top al celor mai
+ bune 10 scoruri si numele utilizatorilor care le-au realizat(aceste date sunt
+ pastrate intr-un fisier text, numit 'highscore.txt', pentru a fi folosite si 
+ dupa iesirea din aplicatie).
+-CREDITS => O fereastra cu datele creatorului aplicatiei.
+-QUIT => Aceasta optiune permite utilizatorului sa paraseasca aplicatia. 
+ Din cauza faptului ca optiunea QUIT poate fi selectata accidental, 
+ va aparea o fereastra pentru confirmarea sau infirmarea deciziei.
+
+Descrierea jocului propriu-zis.
+
+Fereastra de joc este formata din 3 componente: tabla de joc, tabla de scorurui si legenda.
+
+Tabla de joc este una reprezentativa pentru renumitul joc 2048, de 4x4. 
+La inceputul jocului sunt generate, pe pozitii aleatoare, doua celule cu valorile 2 sau 4.
+La unirea a doua celule de valori egale, acestea se vor transforma intr-o celula 
+de valoare dubla acestora si va fi adaugata la scor. Scopul jocului este sa ajungi 
+la o celula cu valoarea 2048 prin schimbarea directiei celulelor, realizata de 
+apasarea sagetilor de pe tastatura. In cazul in care tabla se umple de celule, iar 
+niciuna nu poate fi unita cu un vecin vertical sau orizontal, nu mai exista miscari 
+legale si este semnalat finalul jocului(va aparea o fereastra menita sa preia 
+datele utilizatorului). In cazul in care scorul este mai mare decat al zecelea scor
+din top, acesta ii va lua locul, iar apoi va fi realizata sortarea scorurilor din top. 
+
+Tabla scorului prezinta cel mai bun scor accumulat de la ultima compilare programului 
+si scorul curent, ce se modifica la fiecare unire de celule. In cazul in care scorul
+curent va depasi cel mai bun scor, acestea vor coincide pana la finalul jocului.
+
+Legenda este o tabla simpla ce prezinta utilizatorului tastele ce pot fi utilizate
+in fereastra de joc precum si data si timpul curent.
+
+De notat: la apasarea tastei 'q' utilizatorul iese din fereastra de joc, dar tabla si
+scorul sunt pastrate pentru a putea fi folosite in cazul in care utilizatorul selecteaza
+optiunea RESUME.
